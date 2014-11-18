@@ -53,8 +53,8 @@ then
 fi
 
 
-# list (only files) and exclude from exclude list
-files_to_bkp=$(find $source_dir -type f | egrep -v $to_exclude)
+# list everything, except directories and exclude from exclude list
+files_to_bkp=$(find $source_dir -not -type d | egrep -v $to_exclude)
 
 
 for item in $files_to_bkp
